@@ -11,6 +11,7 @@ class siswa extends Authenticatable
         'email',
         'nis',
         'password',
+        'kelas_id',
     ];
 
     /**

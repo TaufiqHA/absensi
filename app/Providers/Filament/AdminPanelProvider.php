@@ -12,6 +12,7 @@ use Filament\Support\Colors\Color;
 use Filament\Navigation\NavigationItem;
 use Filament\Navigation\NavigationGroup;
 use App\Filament\Resources\KelasResource;
+use App\Filament\Resources\SiswaResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Navigation\NavigationBuilder;
 use Illuminate\Session\Middleware\StartSession;
@@ -74,6 +75,10 @@ class AdminPanelProvider extends PanelProvider
                     NavigationGroup::make('Kelola Kelas')
                         ->items([
                             ...KelasResource::getNavigationItems(),
+                        ]),
+                    NavigationGroup::make('Kelola Siswa')
+                        ->items([
+                            ...SiswaResource::getNavigationItems(),
                         ]),
                 ]);
             });;

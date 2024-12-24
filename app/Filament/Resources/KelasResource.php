@@ -64,6 +64,7 @@ class KelasResource extends Resource
             'index' => Pages\ListKelas::route('/'),
             'create' => Pages\CreateKelas::route('/create'),
             'edit' => Pages\EditKelas::route('/{record}/edit'),
+            'siswa' => Pages\tambahKelas::route('/{record}/tambahKelas'),
         ];
     }
 }
