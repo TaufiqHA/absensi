@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class siswa extends Authenticatable
@@ -23,4 +24,9 @@ class siswa extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function kelas()
+    {
+        return $this->belongsTo(kelas::class);
+    }
 }

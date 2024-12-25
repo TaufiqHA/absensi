@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\KelasResource\Pages;
+use App\Filament\Resources\KelasResource\Pages\editSiswaKelas;
 use App\Filament\Resources\KelasResource\RelationManagers;
 use App\Models\Kelas;
 use Filament\Forms;
@@ -41,7 +42,9 @@ class KelasResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('siswa')
+                    ->icon('heroicon-o-pencil-square')
+                    ->url(fn ($record) => editSiswaKelas::getUrl([$record->id])),
             ])
             ->emptyStateHeading('Tidak Ada Kelas')
             ->bulkActions([
@@ -65,6 +68,7 @@ class KelasResource extends Resource
             'create' => Pages\CreateKelas::route('/create'),
             'edit' => Pages\EditKelas::route('/{record}/edit'),
             'siswa' => Pages\tambahKelas::route('/{record}/tambahKelas'),
+            'editSiswa' => Pages\editSiswaKelas::route('/{record}/editSiswa'),
         ];
     }
 }

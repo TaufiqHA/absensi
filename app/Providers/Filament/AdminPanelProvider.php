@@ -49,6 +49,7 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
+            ->databaseNotifications()
             ->defaultThemeMode(ThemeMode::Light)
             ->middleware([
                 EncryptCookies::class,
